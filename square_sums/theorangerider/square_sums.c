@@ -28,7 +28,8 @@ typedef struct num_map
 } num_map_t;
 
 
-int number = 12;
+int max_min_cost = 0;
+int number = 1000000;
 int allocated_num_maps;
 num_map_t * num_maps;
 
@@ -95,6 +96,11 @@ void build_sums(int num)
              num_maps[min_idx1].numbers_str, num_maps[min_idx2].numbers_str);
     dbgprintf("Min cost for num: %d is %d. Num_str is %s\n",
               num, num_maps[num].cost, num_maps[num].numbers_str);
+    if (max_min_cost < min_cost) {
+        max_min_cost = min_cost;
+        printf("Min cost for num: %d is %d. Num_str is %s\n",
+               num, num_maps[num].cost, num_maps[num].numbers_str);
+    }
 }
 
 
@@ -104,7 +110,8 @@ void find_sums(int num)
     for (i = 1; i <= num; i++) {
         build_sums(i);
     }
-    printf("%s\n", num_maps[num].numbers_str);
+    printf("sum of squares: %s\n", num_maps[num].numbers_str);
+    printf("max min_cost: %d\n", max_min_cost);
 }
 
 int main()
