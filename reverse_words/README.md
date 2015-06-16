@@ -11,5 +11,5 @@
 3. Then modify it to handle non-alpha characters
       To execute C, please define "int main()"
    becomes
-      ()"main int "define please, C execute oT
+      ()"main int "define please, C execute To
 ```
