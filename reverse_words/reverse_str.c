@@ -20,6 +20,7 @@ void reverse_string(char * str, int len)
 
 int main() {
   
+    printf("********************************************************************************\n");
     char my_str[1024];
     strncpy(my_str, "To execute C, please define \"int main()\"", 1024);
 
@@ -35,18 +36,21 @@ int main() {
         // non-alpha characters. Find which one and then reverse that group
         int is_alpha = isalpha(my_str[i]);
         start_idx = i;
-        while (is_alpha == isalpha(my_str[i]))
+        while (is_alpha && isalpha(my_str[i]) ||
+               !is_alpha && !isalpha(my_str[i]))
         {
             i++;
         }
         // Found a group of alpha or non-alpha, reverse it
         printf("Reversing my_str\n %s\n from start_idx %d for length of %d."
-                "i is %d\n",
-               my_str, start_idx, i-start_idx, i);
+                "i is %d, my_str[start_idx] is %c, my_str[i-1] is %c\n",
+               my_str, start_idx, i-start_idx, i, my_str[start_idx], my_str[i-1]);
         reverse_string(&my_str[start_idx], i - start_idx);
         // Move on to the next character
     }
+    printf("--------------------------------------------------------------------------------\n");
     printf("%s\n", my_str);
+    printf("********************************************************************************\n");
     return 0;
 }
 
