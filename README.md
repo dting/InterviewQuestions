@@ -4,4 +4,5 @@ please create a new branch for your username and then code it up however you lik
 
 ## List of Questions
 1. [Sum of squares](square_sums/README.md)
-1. [Reverse words](reverse_words/README.md)
+2. [Reverse words](reverse_words/README.md)
+3. [m factors of n](m_factors_n/README.md)
